@@ -1,4 +1,4 @@
-package fr.fxjavadevblog.qjg;
+package fr.fxjavadevblog.qjg.ping;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

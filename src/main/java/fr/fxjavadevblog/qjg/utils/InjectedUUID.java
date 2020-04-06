@@ -1,4 +1,4 @@
-package fr.fxjavadevblog.qjg;
+package fr.fxjavadevblog.qjg.utils;
 
 
 import java.lang.annotation.ElementType;

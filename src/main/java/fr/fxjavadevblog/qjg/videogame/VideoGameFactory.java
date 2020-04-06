@@ -1,5 +1,8 @@
-package fr.fxjavadevblog.qjg;
+package fr.fxjavadevblog.qjg.videogame;
 
+import java.lang.annotation.Annotation;
+
+import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.spi.CDI;
 
 public class VideoGameFactory

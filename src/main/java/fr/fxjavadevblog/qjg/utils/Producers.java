@@ -1,4 +1,4 @@
-package fr.fxjavadevblog.qjg;
+package fr.fxjavadevblog.qjg.utils;
 
 import java.util.UUID;
 
@@ -16,7 +16,6 @@ public class Producers
      */
     @Produces
     @InjectedUUID
-    @SuppressWarnings("unused")
     public String produceUUIDAsString()
     {
         return UUID.randomUUID().toString();
