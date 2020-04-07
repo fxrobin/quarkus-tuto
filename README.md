@@ -54,9 +54,17 @@ or
 $ curl http://localhost:8080/api/videogames/v1/genre/pinball
 ```
 
+## Running integration tests
+
+> Note : PostgreSQL must **NOT** be running because the `verify` goal will launch a containerized PostgreSQL with Docker.
+
+```
+$  mvn verify -Dskip.surefire.tests
+```
+
 ## Generate and test de native build
 
-> PostgreSQL must be running
+> Note : PostgreSQL must be running
 
 ```bash
 $ mvn clean package -Pnative -Dmaven.test.skip=true
