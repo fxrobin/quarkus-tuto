@@ -59,7 +59,7 @@ $ mvn clean package -Pnative -Dmaven.test.skip=true
 $ ./target/quarkus-tuto-0.0.1-SNAPSHOT-runner
 ```
 
-> send HTTP Get requests as if § '*Send REST Get request*'
+> send HTTP Get requests as describes § '*Send REST Get request*'
 
 
 
