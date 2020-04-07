@@ -10,8 +10,13 @@ import javax.enterprise.inject.spi.CDI;
  *
  */
 
-public class VideoGameFactory
+public final class VideoGameFactory
 {
+    private VideoGameFactory()
+    {
+        // protection for outer calls.
+    }
+    
     /**
      * creates and brand new VideoGame instance with its own UUID as PK.
      *
