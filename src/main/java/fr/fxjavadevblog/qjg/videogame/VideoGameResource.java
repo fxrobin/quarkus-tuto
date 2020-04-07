@@ -2,10 +2,13 @@ package fr.fxjavadevblog.qjg.videogame;
 
 import java.util.List;
 
+import javax.ws.rs.BadRequestException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+
+import org.apache.commons.lang3.StringUtils;
 
 @Path("/api/videogames/v1")
 public class VideoGameResource
@@ -29,7 +32,14 @@ public class VideoGameResource
     @Produces("application/json")
     public List<VideoGame> findByGenre(@PathParam(value = "genre") String genre)
     {
-        return videoGameRepository.findByGenre(Genre.valueOf(genre.toUpperCase()));
+        try
+        {
+            Genre realGenre = Genre.valueOf(StringUtils.replace(genre, "-", "_").toUpperCase());
+            return videoGameRepository.findByGenre(realGenre);
+        }
+        catch (java.lang.IllegalArgumentException e)
+        {
+            throw new BadRequestException("Genre " + genre + "does not exist.");
+        }
     }
-
 }
