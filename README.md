@@ -18,27 +18,13 @@
 $ docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0 --name quarkus_tuto -e POSTGRES_USER=quarkus_tuto -e POSTGRES_PASSWORD=quarkus_tuto -e POSTGRES_DB=quarkus_tuto -p 5432:5432 postgres:12.2
 ```
 
-## Get the source and run the application
+## Get the source and run the application in dev mode
 
 
 ```bash
 $ git clone https://github.com/fxrobin/quarkus-tuto.git
 $ cd quarkus-tuto
 $ mvn quarkus:dev
-```
-
-## Generate and test de native build
-
-> PostgreSQL must be running
-
-```bash
-$ mvn clean package -Pnative -Dmaven.test.skip=true
-```
-
-## Run the native application
-
-```
-$ ./target/quarkus-tuto-0.0.1-SNAPSHOT-runner
 ```
 
 ## Send REST Get request
@@ -58,6 +44,22 @@ or
 ```
 $ curl http://localhost:8080/api/videogames/v1/genre/pinball
 ```
+
+## Generate and test de native build
+
+> PostgreSQL must be running
+
+```bash
+$ mvn clean package -Pnative -Dmaven.test.skip=true
+```
+
+## Run the native application
+
+```
+$ ./target/quarkus-tuto-0.0.1-SNAPSHOT-runner
+```
+
+> send HTTP Get requests as if § '*Send REST Get request*'
 
 
 
