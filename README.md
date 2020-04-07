@@ -29,6 +29,15 @@ $ mvn quarkus:dev
 
 ## Send REST Get request
 
+Check if the application is running :
+
+```
+$ curl http://localhost:8080/api/ping/v1
+```
+
+Send usefull requests :
+
+
 ```
 $ curl http://localhost:8080/api/videogames/v1
 ```
