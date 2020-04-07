@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-import fr.fxjavadevblog.qjg.utils.InjectedUUID;
+import fr.fxjavadevblog.qjg.utils.InjectUUID;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -35,7 +35,7 @@ public class VideoGame implements Serializable
 {
     @Id
     @Inject
-    @InjectedUUID
+    @InjectUUID
     @Getter
     @Column(length = 36)
     String id;

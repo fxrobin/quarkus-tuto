@@ -5,8 +5,16 @@ import java.util.UUID;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 
+
+/**
+ * UUID CDI Producer.
+ * 
+ * @see InjectUUID
+ * @author robin
+ *
+ */
 @ApplicationScoped
-public class Producers
+public class UUIDProducer
 {
     /**
      * produces randomly generated UUID for primary keys.
@@ -15,7 +23,7 @@ public class Producers
      *
      */
     @Produces
-    @InjectedUUID
+    @InjectUUID
     public String produceUUIDAsString()
     {
         return UUID.randomUUID().toString();

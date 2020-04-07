@@ -8,9 +8,17 @@ import java.lang.annotation.Target;
 
 import javax.inject.Qualifier;
 
+
+/**
+ * annotation to mark a field to be injected by CDI with a UUID.
+ * 
+ * @author robin
+ *
+ */
+
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
-public @interface InjectedUUID
+@Target({ElementType.FIELD, ElementType.METHOD})
+public @interface InjectUUID
 {
 }

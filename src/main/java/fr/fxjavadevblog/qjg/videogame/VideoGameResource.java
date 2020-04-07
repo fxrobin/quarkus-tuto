@@ -10,6 +10,13 @@ import javax.ws.rs.Produces;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * JAX-WS endpoint for Video Games.
+ * 
+ * @author robin
+ *
+ */
+
 @Path("/api/videogames/v1")
 public class VideoGameResource
 {

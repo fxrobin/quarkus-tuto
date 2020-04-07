@@ -1,9 +1,14 @@
 package fr.fxjavadevblog.qjg.videogame;
 
-import java.lang.annotation.Annotation;
 
-import javax.enterprise.context.Dependent;
 import javax.enterprise.inject.spi.CDI;
+
+/**
+ * Factory for Video Games.
+ * 
+ * @author robin
+ *
+ */
 
 public class VideoGameFactory
 {
