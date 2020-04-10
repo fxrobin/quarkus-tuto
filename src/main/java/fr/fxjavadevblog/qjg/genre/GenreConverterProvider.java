@@ -12,9 +12,9 @@ import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 
 @Provider
-public class GenreConverterProdiver implements ParamConverterProvider
+public class GenreConverterProvider implements ParamConverterProvider
 {
-    private final Logger log = LoggerFactory.getLogger(GenreConverterProdiver.class);
+    private final Logger log = LoggerFactory.getLogger(GenreConverterProvider.class);
     private final GenreConverter converter = new GenreConverter();
     
     public class GenreConverter implements ParamConverter<Genre>
