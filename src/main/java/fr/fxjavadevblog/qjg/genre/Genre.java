@@ -1,8 +1,6 @@
 package fr.fxjavadevblog.qjg.genre;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * Enumeration of all genre of Video Games for Atari ST.
