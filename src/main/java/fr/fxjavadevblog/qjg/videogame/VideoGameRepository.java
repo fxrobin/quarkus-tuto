@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
+import fr.fxjavadevblog.qjg.genre.Genre;
+
 /**
  * CRUD repository for the VideoGame class. Primary key is a UUID represented by a String.
  * This repository is created by Hibernate Data JPA.

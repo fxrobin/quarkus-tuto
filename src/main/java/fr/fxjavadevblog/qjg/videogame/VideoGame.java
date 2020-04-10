@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import fr.fxjavadevblog.qjg.genre.Genre;
 import fr.fxjavadevblog.qjg.utils.InjectUUID;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
