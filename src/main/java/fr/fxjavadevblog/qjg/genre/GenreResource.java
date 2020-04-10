@@ -7,18 +7,18 @@ import javax.ws.rs.Produces;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
 /**
- * JAX-WS endpoint for Video Games.
+ * JAX-RS endpoint for genre of video games.
  * 
  * @author robin
  *
  */
 
 @Path("/api/genres/v1")
+@Produces("application/json")
 public class GenreResource
 {  
-    @Operation(summary = "returns all genres of video games on Atari ST")
     @GET
-    @Produces("application/json")
+    @Operation(summary = "returns all genres of video games on Atari ST")
     public Genre[] getAllGenres()
     {
         return Genre.values();

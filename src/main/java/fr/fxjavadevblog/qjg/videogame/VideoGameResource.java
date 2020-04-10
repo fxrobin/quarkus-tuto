@@ -2,6 +2,7 @@ package fr.fxjavadevblog.qjg.videogame;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -12,34 +13,29 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 import fr.fxjavadevblog.qjg.genre.Genre;
 
 /**
- * JAX-WS endpoint for Video Games.
+ * JAX-RS endpoint for Video Games.
  * 
  * @author robin
  *
  */
 @Path("/api/videogames/v1")
+@Produces("application/json")
 public class VideoGameResource
 {
-    private final VideoGameRepository videoGameRepository;
-
-    public VideoGameResource(VideoGameRepository videoGameRepository)
-    {
-        this.videoGameRepository = videoGameRepository;
-    }
-
-    @Operation(summary = "Get games", description = "Get all video games on Atari ST")
+    @Inject
+    VideoGameRepository videoGameRepository;
+    
     @GET
-    @Produces("application/json")
+    @Operation(summary = "Get games", description = "Get all video games on Atari ST")
     public Iterable<VideoGame> findAll()
     {
         return videoGameRepository.findAll();
     }
-
-    @Operation(summary = "Get games within a genre", description = "Get all video games of the given genre")
+ 
     @GET
+    @Operation(summary = "Get games within a genre", description = "Get all video games of the given genre")
     @Path("/genre/{genre}")
-    @Produces("application/json")
-    public List<VideoGame> findByGenre(@PathParam(value = "genre") Genre genre)
+    public List<VideoGame> findByGenre(@PathParam("genre") Genre genre)
     {
         return videoGameRepository.findByGenre(genre);
     }

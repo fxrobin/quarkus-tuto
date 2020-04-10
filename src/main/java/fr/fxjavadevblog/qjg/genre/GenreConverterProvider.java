@@ -11,6 +11,20 @@ import java.lang.reflect.Type;
 import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 
+/**
+ * JAW-RS provider for Genre convertion. 
+ * 
+ * <p>Examples :</p> 
+ * 
+ * <pre>
+ * "ARCADE" <-> "arcade"
+ * "SHOOT_THEM_UP" <-> "shoot-them.up"
+ * </pre>
+ * 
+ * @author robin
+ *
+ */
+
 @Provider
 public class GenreConverterProvider implements ParamConverterProvider
 {

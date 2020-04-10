@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
 /**
- * Simple JAX-WS endoint to check if the application is running.
+ * Simple JAX-RS endoint to check if the application is running.
  * 
  * @author robin
  *
@@ -16,8 +16,8 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 @Path("/api/ping/v1")
 public class PingService
 {
-    @Operation(summary = "Get pong", description = "returns a simple reponse as ping/pong ")
     @GET
+    @Operation(summary = "Get pong", description = "returns a simple reponse as ping/pong ")
     @Produces("text/plain")
     public String ping()
     {
