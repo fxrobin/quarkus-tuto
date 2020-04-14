@@ -41,6 +41,18 @@
     </dependency>
 
     <dependency>
+      <groupId>org.eclipse.collections</groupId>
+      <artifactId>eclipse-collections-api</artifactId>
+      <version>10.2.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.collections</groupId>
+      <artifactId>eclipse-collections</artifactId>
+      <version>10.2.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
     </dependency>
@@ -49,17 +61,17 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-spring-data-jpa</artifactId>
     </dependency>
- 
+
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jackson</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jackson</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-validator</artifactId>
@@ -68,7 +80,7 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
-    
+
     <!-- OpenAPI -->
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -76,14 +88,14 @@
     </dependency>
 
     <!-- TEST DEPS -->
-    <!--  quarkus et JUnit 5 -->
+    <!-- quarkus et JUnit 5 -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5</artifactId>
       <scope>test</scope>
     </dependency>
-    
-    <!--  Rest Assured -->
+
+    <!-- Rest Assured -->
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
@@ -169,7 +181,8 @@
         </executions>
       </plugin>
 
-      <!-- tests d'integration : pour inclure les fichiers JAVA à compiler pour les tests -->
+      <!-- tests d'integration : pour inclure les fichiers JAVA à compiler 
+        pour les tests -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
@@ -263,7 +276,7 @@
     </plugins>
   </build>
 
-  <!-- profile pour builder l'application native avec GraalVM  -->
+  <!-- profile pour builder l'application native avec GraalVM -->
   <profiles>
     <profile>
       <id>native</id>
