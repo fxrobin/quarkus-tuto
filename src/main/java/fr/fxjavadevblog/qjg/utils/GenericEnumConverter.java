@@ -1,6 +1,7 @@
 package fr.fxjavadevblog.qjg.utils;
 
 import java.util.EnumSet;
+import java.util.Optional;
 
 import javax.ws.rs.ext.ParamConverter;
 
@@ -47,15 +48,21 @@ public class GenericEnumConverter<T extends Enum<T>> implements ParamConverter<T
     
     private GenericEnumConverter(Class<T> t)
     {
+        log.debug("Generating conversion map for enum {}", t);
         EnumSet.allOf(t).forEach(v -> {
             try
             {
-                biMap.put(v, v.getClass().getDeclaredField(v.name()).getAnnotation(JsonProperty.class).value());
+                String enumValue = v.name();
+                JsonProperty annotation =  v.getClass().getDeclaredField(enumValue).getAnnotation(JsonProperty.class);
+                // get the annotation if exists or take the classic enum representation
+                String result = Optional.ofNullable(annotation).map(JsonProperty::value).orElse(enumValue);
+                log.debug("Enum value {}.{} is mapped to \"{}\"", t.getSimpleName(), v.name(), result);
+                biMap.put(v, result);
             }
             catch (NoSuchFieldException | SecurityException e)
             {
-                log.debug("Error while populating BiMap of enum {}", t.getClass());
-                log.debug("Thrown by ", e);
+                log.error("Error while populating BiMap of enum {}", t.getClass());
+                log.error("Thrown by ", e);
             }
         });
     }

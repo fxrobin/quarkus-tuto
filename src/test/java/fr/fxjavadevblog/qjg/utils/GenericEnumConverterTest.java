@@ -6,8 +6,8 @@ import javax.ws.rs.ext.ParamConverter;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -31,7 +31,12 @@ class GenericEnumConverterTest
         VALUE_4,
 
         @JsonProperty("value-5")
-        VALUE_5;
+        VALUE_5,
+        
+        // without annotation intentionaly ! 
+        VALUE_6;
+        
+        
     }
 
     static private ParamConverter<DummyEnum> converter;
@@ -43,8 +48,8 @@ class GenericEnumConverterTest
     }
     
     
-    @Test
     @DisplayName("Enum to Json via GenericEnumConverter")
+    @RepeatedTest(50)
     void testEnumToJson()
     {
         assertEquals("value-1", converter.toString(DummyEnum.VALUE_1));
@@ -52,10 +57,12 @@ class GenericEnumConverterTest
         assertEquals("value-3", converter.toString(DummyEnum.VALUE_3));
         assertEquals("value-4", converter.toString(DummyEnum.VALUE_4));
         assertEquals("value-5", converter.toString(DummyEnum.VALUE_5));
+        assertEquals("VALUE_6", converter.toString(DummyEnum.VALUE_6));
     }
 
-    @Test
+ 
     @DisplayName("Json to Enum via GenericEnumConverter")
+    @RepeatedTest(50)
     void testJsonToEnum()
     {
         assertEquals(DummyEnum.VALUE_1, converter.fromString("value-1"));
@@ -63,6 +70,7 @@ class GenericEnumConverterTest
         assertEquals(DummyEnum.VALUE_3, converter.fromString("value-3"));
         assertEquals(DummyEnum.VALUE_4, converter.fromString("value-4"));
         assertEquals(DummyEnum.VALUE_5, converter.fromString("value-5"));
+        assertEquals(DummyEnum.VALUE_6, converter.fromString("VALUE_6"));
     }
 
 }
