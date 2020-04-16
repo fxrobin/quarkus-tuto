@@ -33,7 +33,7 @@ public class VideoGameResource
 
     @GET
     @Operation(summary = "Get games", description = "Get all video games on Atari ST")
-    @Timed(name = "checksTimerFindAll", description = "A measure of how long it takes to fetch all video games.", unit = MetricUnits.MILLISECONDS)
+    @Timed(name = "VideoGame.findAll", absolute = true, description = "A measure of how long it takes to fetch all video games.", unit = MetricUnits.MILLISECONDS)
     public Iterable<VideoGame> findAll()
     {
         return videoGameRepository.findAll();
@@ -42,7 +42,7 @@ public class VideoGameResource
     @GET
     @Operation(summary = "Get games within a genre", description = "Get all video games of the given genre")
     @Path("/genre/{genre}")
-    @Timed(name = "checksTimerFindByGenre", description = "A measure of how long it takes to fetch all video games filtered by a given genre.", unit = MetricUnits.MILLISECONDS)
+    @Timed(name = "VideoGame.findByGenre", absolute = true, description = "A measure of how long it takes to fetch all video games filtered by a given genre.", unit = MetricUnits.MILLISECONDS)
     public List<VideoGame> findByGenre(@PathParam("genre") Genre genre)
     {
         log.debug("Calling {}.findByGenre : {}", this.getClass().getSimpleName(), genre);
