@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Enumeration of all genre of Video Games for Atari ST.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 public enum Genre
@@ -22,8 +22,8 @@ public enum Genre
    @JsonProperty(value = "pinball")
    PINBALL, 
    
-   @JsonProperty(value = "plateform")
-   PLATEFORM, 
+   @JsonProperty(value = "platform")
+   PLATFORM, 
    
    @JsonProperty(value = "reflexion")
    REFLEXION, 
