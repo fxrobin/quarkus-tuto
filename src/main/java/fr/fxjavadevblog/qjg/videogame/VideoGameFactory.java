@@ -6,7 +6,7 @@ import javax.enterprise.inject.spi.CDI;
 /**
  * Factory for Video Games.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 

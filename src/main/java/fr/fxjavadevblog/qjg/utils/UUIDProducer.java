@@ -10,7 +10,7 @@ import javax.enterprise.inject.Produces;
  * UUID CDI Producer.
  * 
  * @see InjectUUID
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 @ApplicationScoped

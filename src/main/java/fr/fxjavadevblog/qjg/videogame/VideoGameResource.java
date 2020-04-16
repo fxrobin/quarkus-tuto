@@ -8,6 +8,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import org.eclipse.microprofile.metrics.MetricUnits;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +19,7 @@ import fr.fxjavadevblog.qjg.genre.Genre;
 /**
  * JAX-RS endpoint for Video Games.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 @Path("/api/videogames/v1")
@@ -31,6 +33,7 @@ public class VideoGameResource
 
     @GET
     @Operation(summary = "Get games", description = "Get all video games on Atari ST")
+    @Timed(name = "checksTimerFindAll", description = "A measure of how long it takes to fetch all video games.", unit = MetricUnits.MILLISECONDS)
     public Iterable<VideoGame> findAll()
     {
         return videoGameRepository.findAll();
@@ -39,6 +42,7 @@ public class VideoGameResource
     @GET
     @Operation(summary = "Get games within a genre", description = "Get all video games of the given genre")
     @Path("/genre/{genre}")
+    @Timed(name = "checksTimerFindByGenre", description = "A measure of how long it takes to fetch all video games filtered by a given genre.", unit = MetricUnits.MILLISECONDS)
     public List<VideoGame> findByGenre(@PathParam("genre") Genre genre)
     {
         log.debug("Calling {}.findByGenre : {}", this.getClass().getSimpleName(), genre);

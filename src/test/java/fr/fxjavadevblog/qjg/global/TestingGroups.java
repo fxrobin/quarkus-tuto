@@ -4,7 +4,7 @@ package fr.fxjavadevblog.qjg.global;
 /**
  * constants for JUnit group tests.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 public interface TestingGroups
