@@ -10,7 +10,7 @@ import fr.fxjavadevblog.qjg.global.TestingGroups;
 /**
  * Dummy test.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 @Tag("integration-testing")

@@ -19,7 +19,7 @@ import io.quarkus.test.junit.QuarkusTest;
 /**
  * CDI injections tests.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 

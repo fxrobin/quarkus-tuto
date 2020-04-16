@@ -12,7 +12,7 @@ import javax.inject.Qualifier;
 /**
  * annotation to mark a field to be injected by CDI with a UUID.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 

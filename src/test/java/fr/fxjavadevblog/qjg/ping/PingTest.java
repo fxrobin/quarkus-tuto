@@ -13,7 +13,7 @@ import io.quarkus.test.junit.QuarkusTest;
  * Checking "ping service".
  * 
  * @see fr.fxjavadevblog.qjg.ping.PingService.PingService
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 

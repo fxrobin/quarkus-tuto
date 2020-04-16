@@ -9,7 +9,7 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 /**
  * JAX-RS endpoint for genre of video games.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 

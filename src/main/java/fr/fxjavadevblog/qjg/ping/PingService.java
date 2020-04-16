@@ -9,7 +9,7 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 /**
  * Simple JAX-RS endoint to check if the application is running.
  * 
- * @author robin
+ * @author François-Xavier Robin
  *
  */
 
